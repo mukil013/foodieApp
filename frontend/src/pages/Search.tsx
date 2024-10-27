@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import NavBar from '../components/NavBar';
+import { OPEN_API } from '../api';
 
 interface Food {
   image: string;
@@ -49,7 +50,7 @@ export default function Search() {
         messages: [{ role: "user", content: `Tell me about ${search}` }],
       }, {
         headers: {
-          'Authorization': `Bearer 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`,
+          'Authorization': `Bearer ${OPEN_API}`,
           'Content-Type': 'application/json',
         },
       });
