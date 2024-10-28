@@ -94,21 +94,23 @@ export default function Search() {
         {error && <p className="text-red-500">{error}</p>}
 
         <div className='mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-          {foods.map((food, index) => (
-            <div key={index} className='p-4 border rounded-lg shadow-md'>
-              <img src={food.image} alt={food.name} className='w-full h-40 object-contain rounded-md ' />
-              <h2 className='mt-2 text-xl font-semibold'>{food.name}</h2>
-              <p className='text-gray-600'>{food.description}</p>
-              <p className='text-gray-700 font-semibold'>Price: {food.price}</p>
-              <p className='text-gray-500'>Available at: {food.hotelName}</p> {/* Added hotel name here */}
-              <button
-                onClick={() => addToCart(food)}
-                className='mt-2 bg-blue-500 text-white p-2 rounded-md'
-              >
-                Add to Cart
-              </button>
-            </div>
-          ))}
+          {foods
+            .filter((food) => food.name.toLowerCase().includes(search.toLowerCase()))
+            .map((food, index) => (
+              <div key={index} className='p-4 border rounded-lg shadow-md'>
+                <img src={food.image} alt={food.name} className='w-full h-40 object-contain rounded-md ' />
+                <h2 className='mt-2 text-xl font-semibold'>{food.name}</h2>
+                <p className='text-gray-600'>{food.description}</p>
+                <p className='text-gray-700 font-semibold'>Price: {food.price}</p>
+                <p className='text-gray-500'>Available at: {food.hotelName}</p>
+                <button
+                  onClick={() => addToCart(food)}
+                  className='mt-2 bg-blue-500 text-white p-2 rounded-md'
+                >
+                  Add to Cart
+                </button>
+              </div>
+            ))}
         </div>
       </div>
     </>

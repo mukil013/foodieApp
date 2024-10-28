@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import profilePic from '../assets/boy.png'
 
 export default function NavBar() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -27,16 +28,12 @@ export default function NavBar() {
               Account
             </button>
             {isPopupOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg p-4 z-50">
-                <p className="text-gray-700 font-semibold mb-2">Hello, {userName}</p>
+              <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg p-4 z-50 flex justify-center items-center">
                 <ul>
+                <img src={profilePic} alt="profile" 
+                className='h-[5rem] aspect-square'/>
                   <li className="mb-2">
-                    <Link to="/profile" className="w-full text-left hover:text-blue-500" onClick={() => setIsPopupOpen(false)}>
-                      Profile
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link to="/settings" className="w-full text-left hover:text-blue-500" onClick={() => setIsPopupOpen(false)}>
+                    <Link to='' className="w-full text-left hover:text-blue-500" onClick={() => setIsPopupOpen(false)}>
                       Settings
                     </Link>
                   </li>

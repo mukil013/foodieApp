@@ -1,0 +1,1 @@
+export const OPEN_API = "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"

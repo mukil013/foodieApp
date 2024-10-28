@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import profilePic from '../assets/boy.png';
 
 export default function NavBar() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const userName = "John Doe";  // Replace with actual username from user data
+  const userName = "John Doe";
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
@@ -11,7 +12,7 @@ export default function NavBar() {
 
   const handleLogout = () => {
     console.log("User logged out");
-    // Add logout logic here
+    window.location.href = '/login'
   };
 
   return (
@@ -30,11 +31,6 @@ export default function NavBar() {
               <div className="absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg p-4 z-50">
                 <p className="text-gray-700 font-semibold mb-2">Hello, {userName}</p>
                 <ul>
-                  <li className="mb-2">
-                    <Link to="/profile" className="w-full text-left hover:text-blue-500" onClick={togglePopup}>
-                      Profile
-                    </Link>
-                  </li>
                   <li className="mb-2">
                     <Link to="/settings" className="w-full text-left hover:text-blue-500" onClick={togglePopup}>
                       Settings

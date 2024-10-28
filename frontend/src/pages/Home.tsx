@@ -15,9 +15,9 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <div className='p-2 w-full h-screen flex flex-col items-center'>
+      <div className='p-2 w-full h-fit flex flex-col items-center'>
         <h1 className='text-4xl font-bold p-4'>Popular</h1>
-        <div className='w-full max-w-screen-lg h-60 overflow-hidden' id='popular'>
+        <div className='w-full h-1/2 overflow-hidden object-cover' id='popular'>
           <Carousel
             showThumbs={false}
             infiniteLoop
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
 
         <h1 className='text-4xl font-bold p-4'>Trending</h1>
-        <div className='w-full max-w-screen-lg h-60 overflow-hidden' id='trending'>
+        <div className='w-full h-full overflow-hidden' id='trending'>
           <Carousel
             showThumbs={false}
             infiniteLoop
