@@ -47,7 +47,7 @@ export default function Login() {
         const response = await axios.post('http://localhost:5555/user/login', formData);
         console.log("Login successful:", response.data);
         window.location.href = '/'
-      } catch (err) {
+      } catch (err:any) {
         console.error("Login failed:", err.response?.data || err.message);
       } finally {
         setIsSubmitting(false);

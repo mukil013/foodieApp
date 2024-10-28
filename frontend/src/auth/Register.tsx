@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface FormData {
   email: string;

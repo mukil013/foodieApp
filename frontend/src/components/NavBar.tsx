@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import profilePic from '../assets/boy.png'
 
 export default function NavBar() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const userName = "User Name"; 
 
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);
